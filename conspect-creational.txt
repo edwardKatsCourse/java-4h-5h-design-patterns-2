@@ -1,0 +1,43 @@
+Singleton
+
+1. One and only object in the entire JVM
+2. There some implementations of singleton
+3. Usage: there a connection to an old printer machine, that take > 1 minute
+
+PrinterConnection john = new PrinterConnection(); // ~ 1 minute
+
+
+Types:
+- Eager 
+- Lazy
+
+class Person 
+	private String name;
+	private Long id;
+	private PersonSession ps;
+
+
+Dependency (field) Injection
+class PersonService {
+
+	@Autowired
+	private PersonRepository pr; //new PersonRepository()
+}
+
+Multitone - именные объекты
+enum Color {
+	BLUE,	//new Color("BLUE") 
+	GREEN,  //new Color("GREEN")
+	BLACK   //new Color("BLACK")
+}
+
+Map<String, Color>
+.get("blue"); //color.blue
+
+Object Pool - прокатное агенство с фиксированным кол-вом машин
+фиксированное кол-во объектов
+
+.getAvailable()
+.returnBack(object)
+
+
